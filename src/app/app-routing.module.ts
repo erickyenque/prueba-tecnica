@@ -13,6 +13,11 @@ const routes: Routes = [
         import('./modules/perfil/perfil.module').then((m) => m.PerfilModule)
   },
   {
+    path: 'characters',
+    loadChildren: () => 
+        import('./modules/characters/characters.module').then((m) => m.CharactersModule)
+  },
+  {
     path: '**',
     redirectTo: 'login'
   }
