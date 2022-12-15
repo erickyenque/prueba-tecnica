@@ -3,9 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'authentication',
+    path: '',
     loadChildren: () =>
       import('./modules/authentication/authentication.module').then((m) => m.AuthenticationModule),
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => 
+        import('./modules/perfil/perfil.module').then((m) => m.PerfilModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'login'
   }
 ];
 
