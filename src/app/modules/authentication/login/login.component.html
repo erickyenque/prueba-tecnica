@@ -1,1 +1,28 @@
-<p>login works!</p>
+<div class="container">
+    <div class="card mx-auto w-50 my-5">
+        <div class="card-header">
+            <h3>Login</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="loginFormService.getForm" novalidate>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" formControlName="fieldEmail"
+                    [class.is-invalid]="loginFormService.fieldEmailInvalid">
+                    <div class="invalid-feedback" *ngIf="loginFormService.fieldEmailInvalid">
+                        Email required
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" formControlName="fieldPassword" 
+                        [class.is-invalid]="loginFormService.fieldPasswordInvalid">
+                    <div class="invalid-feedback" *ngIf="loginFormService.fieldPasswordInvalid">
+                        Password required
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" (click)="login()">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
